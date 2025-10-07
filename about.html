@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас - Агентство Money Grind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+    <style>
+        body {
+            background-color: #111111;
+            color: #E5E7EB;
+            font-family: 'Inter', sans-serif;
+        }
+        .font-unbounded {
+            font-family: 'Unbounded', sans-serif;
+        }
+        
+        /* Parallax Background */
+        .parallax-bg {
+            position: fixed;
+            top: -50%;
+            left: 0;
+            width: 100%;
+            height: 300vh;
+            background-image: url('bg.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: repeat-y;
+            z-index: -1;
+            opacity: 0.15;
+        }
+        
+        /* Snow effect */
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            z-index: 9999;
+            user-select: none;
+            cursor: default;
+            animation: fall linear infinite;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1em;
+        }
+        
+        @keyframes fall {
+            0% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-100vh, 100vh);
+                opacity: 0.3;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Parallax Background -->
+    <div class="parallax-bg"></div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-opacity-80 backdrop-blur-md border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="https://placehold.co/40x40/1a1a1a/ffffff?text=MG" alt="Логотип Money Grind" class="h-10 w-10 mr-3">
+                <span class="text-xl font-bold text-white">Money Grind</span>
+            </a>
+            <a href="index.html#contacts" class="hidden md:inline-block bg-gray-800 hover:bg-gray-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-300">
+                Связаться
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-6 py-16 md:py-24">
+        
+        <!-- Page Header -->
+        <div class="relative text-center mb-16 md:mb-24" data-aos="fade-in">
+            <img src="https://placehold.co/1200x400/1a1a1a/1a1a1a" alt="Абстрактный фон" class="absolute inset-0 w-full h-full object-cover opacity-10 rounded-2xl">
+            <div class="relative py-12">
+                <h1 class="font-unbounded text-4xl md:text-6xl font-extrabold text-white">
+                    Агентство Money Grind
+                </h1>
+            </div>
+        </div>
+
+        <!-- Agency Description -->
+        <section class="max-w-4xl mx-auto mb-16 md:mb-24">
+            <p data-aos="fade-up" class="text-xl md:text-2xl text-gray-200 leading-relaxed text-center">
+                Вы эксперт в своей нише, но не знаете, как регулярно писать статьи, привлекающие клиентов? Наше агентство специализируется на ведении блогов для инфобизнесменов, коучей, консультантов и онлайн-школ. Мы создаем контент, который работает: экспертные статьи, кейсы, обзоры, полезные советы – все, чтобы вы могли сосредоточиться на развитии своего бизнеса.
+            </p>
+        </section>
+
+        <!-- Advantages Section -->
+        <section>
+            <h2 data-aos="fade-right" class="text-3xl md:text-4xl font-bold text-center mb-12 text-white">Наши преимущества</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                
+                <!-- Advantage Item -->
+                <a href="https://t.me/placeholder_channel/services" target="_blank" data-aos="fade-up" class="block bg-black/50 backdrop-blur-sm border border-gray-800 p-6 rounded-xl hover:border-white hover:bg-black/70 transition-all duration-300 group">
+                    <h3 class="font-bold text-xl text-white mb-2">Привлечение целевой аудитории</h3>
+                    <p class="text-gray-400">Создаем контент, который отвечает на вопросы ваших потенциальных клиентов.</p>
+                </a>
+                
+                <!-- Advantage Item -->
+                <a href="https://t.me/placeholder_channel/services" target="_blank" data-aos="fade-up" data-aos-delay="50" class="block bg-black/50 backdrop-blur-sm border border-gray-800 p-6 rounded-xl hover:border-white hover:bg-black/70 transition-all duration-300 group">
+                    <h3 class="font-bold text-xl text-white mb-2">Увеличение трафика на сайт</h3>
+                    <p class="text-gray-400">Оптимизируем статьи под поисковые запросы для роста органического трафика.</p>
+                </a>
+                
+                <!-- Advantage Item -->
+                <a href="https://t.me/placeholder_channel/services" target="_blank" data-aos="fade-up" data-aos-delay="100" class="block bg-black/50 backdrop-blur-sm border border-gray-800 p-6 rounded-xl hover:border-white hover:bg-black/70 transition-all duration-300 group">
+                    <h3 class="font-bold text-xl text-white mb-2">Рост узнаваемости бренда</h3>
+                    <p class="text-gray-400">Формируем ваш уникальный голос и стиль, который запомнится аудитории.</p>
+                </a>
+
+                <!-- Advantage Item -->
+                <a href="https://t.me/placeholder_channel/services" target="_blank" data-aos="fade-up" data-aos-delay="150" class="block bg-black/50 backdrop-blur-sm border border-gray-800 p-6 rounded-xl hover:border-white hover:bg-black/70 transition-all duration-300 group">
+                    <h3 class="font-bold text-xl text-white mb-2">Укрепление экспертного статуса</h3>
+                    <p class="text-gray-400">Демонстрируем вашу компетентность через глубокие и полезные материалы.</p>
+                </a>
+
+                <!-- Advantage Item -->
+                <a href="https://t.me/placeholder_channel/services" target="_blank" data-aos="fade-up" data-aos-delay="200" class="block bg-black/50 backdrop-blur-sm border border-gray-800 p-6 rounded-xl hover:border-white hover:bg-black/70 transition-all duration-300 group">
+                    <h3 class="font-bold text-xl text-white mb-2">Генерация лидов и продажи</h3>
+                    <p class="text-gray-400">Интегрируем в контент призывы к действию, превращая читателей в клиентов.</p>
+                </a>
+                
+                <!-- Advantage Item -->
+                <a href="https://t.me/placeholder_channel/services" target="_blank" data-aos="fade-up" data-aos-delay="250" class="block bg-black/50 backdrop-blur-sm border border-gray-800 p-6 rounded-xl hover:border-white hover:bg-black/70 transition-all duration-300 group">
+                    <h3 class="font-bold text-xl text-white mb-2">Экономия вашего времени</h3>
+                    <p class="text-gray-400">Вы занимаетесь бизнесом, а мы — созданием контента под ключ.</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="mt-24 md:mt-32">
+            <div data-aos="zoom-in-up" class="bg-black/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 md:p-12 text-center max-w-4xl mx-auto">
+                 <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Готовы увеличить продажи?</h2>
+                <p class="text-gray-300 mb-8">Получите бесплатную консультацию и узнайте, как блог может стать вашим главным источником клиентов!</p>
+                <a href="index.html#contacts" class="inline-block bg-white text-black font-bold py-3 px-8 rounded-lg hover:bg-gray-200 transition-transform transform hover:scale-105 duration-300">
+                    Заказать аудит блога
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="contacts" class="bg-black/50 backdrop-blur-md py-16 md:py-24 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center">
+             <div class="flex justify-center items-center mb-8">
+                <img src="https://placehold.co/50x50/1a1a1a/ffffff?text=MG" alt="Логотип Money Grind" class="h-12 w-12 mr-4">
+                <span class="text-2xl font-bold text-white">Money Grind</span>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 text-gray-400">
+                <a href="tel:+70000000000" class="hover:text-white transition-colors">+7 (000) 000-00-00</a>
+                <span>&bull;</span>
+                <a href="https://t.me/agency_placeholder" target="_blank" class="hover:text-white transition-colors">Telegram-канал</a>
+                <span>&bull;</span>
+                <a href="mailto:mail@mail.com" class="hover:text-white transition-colors">mail@mail.com</a>
+            </div>
+             <div class="mt-12 text-gray-500">
+                &copy; 2025 Money Grind. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+        
+        // Snow effect
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.innerHTML = '●';
+            
+            // Random starting position across entire width (accounting for diagonal fall)
+            const startX = Math.random() * 150; // 0-150% to cover full width after diagonal movement
+            snowflake.style.left = startX + '%';
+            
+            // Random size
+            const size = Math.random() * 0.5 + 0.3; // 0.3em to 0.8em
+            snowflake.style.fontSize = size + 'em';
+            
+            // Random animation duration (fall speed)
+            const duration = Math.random() * 5 + 8; // 8-13 seconds
+            snowflake.style.animationDuration = duration + 's';
+            
+            // Random delay
+            const delay = Math.random() * 5;
+            snowflake.style.animationDelay = delay + 's';
+            
+            document.body.appendChild(snowflake);
+            
+            // Remove snowflake after animation completes
+            setTimeout(() => {
+                snowflake.remove();
+            }, (duration + delay) * 1000);
+        }
+        
+        // Create snowflakes periodically
+        function startSnow() {
+            setInterval(createSnowflake, 200); // New snowflake every 200ms
+            // Initial batch
+            for (let i = 0; i < 30; i++) {
+                setTimeout(createSnowflake, i * 100);
+            }
+        }
+        
+        // Start snow after page loads
+        window.addEventListener('load', startSnow);
+        
+        // Custom Parallax - opposite direction to scroll
+        const parallaxBg = document.querySelector('.parallax-bg');
+        let ticking = false;
+        
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            // Negative value moves background UP when scrolling DOWN (opposite direction)
+            const yPos = -(scrolled * 0.5);
+            parallaxBg.style.transform = `translateY(${yPos}px)`;
+            ticking = false;
+        }
+        
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        });
+    </script>
+</body>
+</html>
