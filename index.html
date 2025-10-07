@@ -4,6 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Агентство Money Grind - Ведение блогов для инфобизнеса</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Профессиональное ведение блогов для инфобизнеса. Превратите свои знания в поток клиентов. Создание экспертного контента, который привлекает аудиторию и увеличивает продажи.">
+    <meta name="keywords" content="ведение блогов, контент для инфобизнеса, SMM, контент-маркетинг, продвижение блога, агентство контента, экспертный блог">
+    <meta name="author" content="Money Grind Agency">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Russian">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://moneygrind.ru/">
+    <meta property="og:title" content="Агентство Money Grind - Ведение блогов для инфобизнеса">
+    <meta property="og:description" content="Профессиональное ведение блогов для инфобизнеса. Превратите свои знания в поток клиентов.">
+    <meta property="og:image" content="https://moneygrind.ru/og-image.jpg">
+    <meta property="og:locale" content="ru_RU">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://moneygrind.ru/">
+    <meta property="twitter:title" content="Агентство Money Grind - Ведение блогов для инфобизнеса">
+    <meta property="twitter:description" content="Профессиональное ведение блогов для инфобизнеса. Превратите свои знания в поток клиентов.">
+    <meta property="twitter:image" content="https://moneygrind.ru/og-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://moneygrind.ru/">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,9 +89,43 @@
                 opacity: 0.3;
             }
         }
+        
+        /* Fullscreen intro video */
+        #intro-video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 10000;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
+        }
+        
+        #intro-video-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        #intro-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body class="antialiased">
+    <!-- Fullscreen Intro Video -->
+    <div id="intro-video-overlay">
+        <video id="intro-video" autoplay muted playsinline>
+            <source src="bg.mp4" type="video/mp4">
+        </video>
+    </div>
+
     <!-- Parallax Background -->
     <div class="parallax-bg"></div>
 
@@ -135,38 +201,38 @@
                 <!-- Review 1 -->
                 <div data-aos="fade-up" class="bg-black/50 backdrop-blur-sm border border-gray-800 rounded-xl p-6 transform hover:-translate-y-2 transition-transform duration-300">
                     <div class="flex items-center mb-4">
-                        <img src="https://placehold.co/50x50" alt="Фото клиента" class="rounded-full mr-4">
+                        <img src="client_2.jpg" alt="Фото клиента" class="rounded-full mr-4 w-12 h-12 object-cover">
                         <div>
                             <p class="font-semibold text-white">Александр В.</p>
                             <p class="text-sm text-gray-400">Онлайн-школа по маркетингу</p>
                         </div>
                     </div>
                     <p class="text-gray-300 mb-4">"Сотрудничество с Money Grind удвоило наш органический трафик за 3 месяца. Профессионалы своего дела!"</p>
-                    <a href="https://t.me/placeholder_channel" target="_blank" class="font-semibold text-white hover:text-gray-300 transition-colors">Читать полный кейс в Telegram &rarr;</a>
+                    <a href="https://t.me/moneygrind_agency" target="_blank" class="font-semibold text-white hover:text-gray-300 transition-colors">Читать полный кейс в Telegram &rarr;</a>
                 </div>
                 <!-- Review 2 -->
                 <div data-aos="fade-up" data-aos-delay="100" class="bg-black/50 backdrop-blur-sm border border-gray-800 rounded-xl p-6 transform hover:-translate-y-2 transition-transform duration-300">
                     <div class="flex items-center mb-4">
-                        <img src="https://placehold.co/50x50" alt="Фото клиента" class="rounded-full mr-4">
+                        <img src="client_1.jpg" alt="Фото клиента" class="rounded-full mr-4 w-12 h-12 object-cover">
                         <div>
                             <p class="font-semibold text-white">Елена С.</p>
                             <p class="text-sm text-gray-400">Коуч по личной эффективности</p>
                         </div>
                     </div>
                     <p class="text-gray-300 mb-4">"Ребята полностью взяли на себя контент-стратегию. Теперь у меня есть постоянный поток заявок из блога."</p>
-                    <a href="https://t.me/placeholder_channel" target="_blank" class="font-semibold text-white hover:text-gray-300 transition-colors">Читать полный кейс в Telegram &rarr;</a>
+                    <a href="https://t.me/moneygrind_agency" target="_blank" class="font-semibold text-white hover:text-gray-300 transition-colors">Читать полный кейс в Telegram &rarr;</a>
                 </div>
                 <!-- Review 3 -->
                 <div data-aos="fade-up" data-aos-delay="200" class="bg-black/50 backdrop-blur-sm border border-gray-800 rounded-xl p-6 transform hover:-translate-y-2 transition-transform duration-300">
                     <div class="flex items-center mb-4">
-                        <img src="https://placehold.co/50x50" alt="Фото клиента" class="rounded-full mr-4">
+                        <img src="client_3.jpg" alt="Фото клиента" class="rounded-full mr-4 w-12 h-12 object-cover">
                         <div>
                             <p class="font-semibold text-white">Иван П.</p>
                             <p class="text-sm text-gray-400">Финансовый консультант</p>
                         </div>
                     </div>
                     <p class="text-gray-300 mb-4">"Качество статей на высшем уровне. Моя экспертность в глазах аудитории значительно выросла."</p>
-                    <a href="https://t.me/placeholder_channel" target="_blank" class="font-semibold text-white hover:text-gray-300 transition-colors">Читать полный кейс в Telegram &rarr;</a>
+                    <a href="https://t.me/moneygrind_agency" target="_blank" class="font-semibold text-white hover:text-gray-300 transition-colors">Читать полный кейс в Telegram &rarr;</a>
                 </div>
             </div>
         </div>
@@ -177,7 +243,7 @@
         <div class="container mx-auto px-6 text-center">
             <h2 data-aos="fade-up" class="text-3xl md:text-4xl font-bold text-white mb-8">Свяжитесь с нами</h2>
             <div data-aos="fade-up" data-aos-delay="100" class="max-w-md mx-auto mb-10">
-                <a href="https://t.me/agency_placeholder" target="_blank" class="group block bg-black/50 backdrop-blur-sm border border-gray-700 hover:border-blue-500 p-6 rounded-2xl transition-all duration-300">
+                <a href="https://t.me/moneygrind_agency" target="_blank" class="group block bg-black/50 backdrop-blur-sm border border-gray-700 hover:border-blue-500 p-6 rounded-2xl transition-all duration-300">
                     <div class="flex items-center justify-center">
                         <!-- CDN-hosted Telegram icon from Simple Icons via jsDelivr -->
                         <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/telegram.svg" alt="Telegram" class="w-10 h-10 text-blue-400 group-hover:text-white transition-colors" style="filter: invert(72%) sepia(20%) saturate(200%) hue-rotate(170deg) brightness(95%);" />
@@ -190,11 +256,11 @@
             </div>
 
             <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 text-gray-400">
-                <a href="tel:+70000000000" class="hover:text-white transition-colors">+7 (000) 000-00-00</a>
-                <span>&bull;</span>
-                <a href="https://t.me/user_placeholder" target="_blank" class="hover:text-white transition-colors">@user_placeholder</a>
-                <span>&bull;</span>
-                <a href="mailto:mail@mail.com" class="hover:text-white transition-colors">mail@mail.com</a>
+                <!-- <a href="tel:+70000000000" class="hover:text-white transition-colors">+7 (000) 000-00-00</a> -->
+                <!-- <span>&bull;</span> -->
+                <a href="https://t.me/moneygrind_agency" target="_blank" class="hover:text-white transition-colors">@moneygrind_agency</a>
+                <!-- <span>&bull;</span>
+                <a href="mailto:mail@mail.com" class="hover:text-white transition-colors">mail@mail.com</a> -->
             </div>
              <div class="mt-12 text-gray-500">
                 &copy; 2025 Money Grind. Все права защищены.
@@ -250,6 +316,19 @@
         
         // Start snow after page loads
         window.addEventListener('load', startSnow);
+        
+        // Intro video handling
+        const introVideoOverlay = document.getElementById('intro-video-overlay');
+        const introVideo = document.getElementById('intro-video');
+        
+        introVideo.addEventListener('ended', function() {
+            // Fade out and hide the overlay
+            introVideoOverlay.classList.add('hidden');
+            // Remove from DOM after transition
+            setTimeout(() => {
+                introVideoOverlay.style.display = 'none';
+            }, 500);
+        });
         
         // Custom Parallax - opposite direction to scroll
         const parallaxBg = document.querySelector('.parallax-bg');
