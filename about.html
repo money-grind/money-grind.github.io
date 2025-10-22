@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&family=Space+Grotesk:wght@300;400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
     <style>
         body {
@@ -60,6 +61,125 @@
                 opacity: 0.3;
             }
         }
+        
+        /* Service Cards with Gradient and Glow */
+        .service-card {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border-radius: 1rem;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 1rem;
+            padding: 2px;
+            background: linear-gradient(135deg, #00f5a0, #00d9f5, #a855f7, #ec4899);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+        
+        .service-card:hover::before {
+            opacity: 1;
+        }
+        
+        .service-card::after {
+            content: '';
+            position: absolute;
+            inset: -100%;
+            background: conic-gradient(from 0deg, transparent, #00f5a0, transparent 30%, transparent 60%, #ec4899, transparent 90%);
+            animation: rotate 4s linear infinite;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            border-radius: 1rem;
+        }
+        
+        .service-card:hover::after {
+            opacity: 0.2;
+        }
+        
+        @keyframes rotate {
+            100% {
+                transform: rotate(1turn);
+            }
+        }
+        
+        .service-card-content {
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(135deg, rgba(0, 245, 160, 0.1), rgba(168, 85, 247, 0.1));
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            transition: all 0.4s ease;
+        }
+        
+        .service-card:hover .service-card-content {
+            background: linear-gradient(135deg, rgba(0, 245, 160, 0.15), rgba(168, 85, 247, 0.15));
+            transform: translateY(-4px);
+        }
+        
+        .service-description {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+        
+        .service-card:hover .service-description {
+            max-height: 200px;
+            opacity: 1;
+            margin-top: 0.75rem;
+        }
+        
+        /* Mobile: expand description on tap */
+        @media (max-width: 768px) {
+            .service-card.active .service-description {
+                max-height: 200px;
+                opacity: 1;
+                margin-top: 0.75rem;
+            }
+            
+            .service-card.active::before {
+                opacity: 1;
+            }
+            
+            .service-card.active::after {
+                opacity: 0.2;
+            }
+            
+            .service-card.active .service-card-content {
+                background: linear-gradient(135deg, rgba(0, 245, 160, 0.15), rgba(168, 85, 247, 0.15));
+                transform: translateY(-4px);
+            }
+            
+            .service-card.active .service-icon {
+                background: linear-gradient(135deg, rgba(0, 245, 160, 0.3), rgba(168, 85, 247, 0.3));
+                transform: scale(1.1);
+            }
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(0, 245, 160, 0.2), rgba(168, 85, 247, 0.2));
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            transition: all 0.4s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            background: linear-gradient(135deg, rgba(0, 245, 160, 0.3), rgba(168, 85, 247, 0.3));
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -107,57 +227,138 @@
             </div>
         </section>
 
-        <!-- Advantages Section -->
+        <!-- Services Section -->
         <section>
-            <h2 data-aos="fade-right" class="font-sora text-3xl md:text-4xl font-bold text-center mb-12 text-white">Наши преимущества</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <h2 data-aos="fade-right" class="font-sora text-3xl md:text-4xl font-bold text-center mb-12 text-white">Наши услуги</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 
-                <!-- Advantage Item -->
-                <a href="https://t.me/moneygrind_agency" target="_blank" data-aos="fade-up" class="block bg-black/50 backdrop-blur-sm border border-gray-800 p-6 rounded-xl hover:border-white hover:bg-black/70 transition-all duration-300 group">
-                    <h3 class="font-bold text-xl text-white mb-2">Привлечение целевой аудитории</h3>
-                    <p class="text-gray-400">Контент, отвечающий на вопросы клиентов.</p>
-                </a>
+                <!-- Service 1: Трафик -->
+                <div data-aos="fade-up" class="service-card">
+                    <div class="service-card-content p-8">
+                        <div class="text-center">
+                            <div class="service-icon">
+                                <i class="fas fa-rocket text-3xl text-white"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-2xl text-white mb-3 text-center">Трафик</h3>
+                        <p class="text-gray-300 text-center text-sm">Привлечение целевой аудитории</p>
+                        <div class="service-description">
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                Комплексное продвижение с использованием SEO, таргетированной рекламы и контент-маркетинга. Привлекаем качественный трафик, который конвертируется в продажи.
+                            </p>
+                        </div>
+                    </div>
+                </div>
                 
-                <!-- Advantage Item -->
-                <a href="https://t.me/moneygrind_agency" target="_blank" data-aos="fade-up" data-aos-delay="50" class="block bg-black/50 backdrop-blur-sm border border-gray-800 p-6 rounded-xl hover:border-white hover:bg-black/70 transition-all duration-300 group">
-                    <h3 class="font-bold text-xl text-white mb-2">Увеличение трафика на сайт</h3>
-                    <p class="text-gray-400">SEO-оптимизация для роста трафика.</p>
-                </a>
+                <!-- Service 2: Фирменный стиль -->
+                <div data-aos="fade-up" data-aos-delay="100" class="service-card">
+                    <div class="service-card-content p-8">
+                        <div class="text-center">
+                            <div class="service-icon">
+                                <i class="fas fa-palette text-3xl text-white"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-2xl text-white mb-3 text-center">Разработка фирменного стиля</h3>
+                        <p class="text-gray-300 text-center text-sm">Уникальная визуальная идентичность</p>
+                        <div class="service-description">
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                Создаем запоминающийся бренд: логотип, фирменные цвета, шрифты, айдентику. Ваш бизнес будет выделяться среди конкурентов.
+                            </p>
+                        </div>
+                    </div>
+                </div>
                 
-                <!-- Advantage Item -->
-                <a href="https://t.me/moneygrind_agency" target="_blank" data-aos="fade-up" data-aos-delay="100" class="block bg-black/50 backdrop-blur-sm border border-gray-800 p-6 rounded-xl hover:border-white hover:bg-black/70 transition-all duration-300 group">
-                    <h3 class="font-bold text-xl text-white mb-2">Рост узнаваемости бренда</h3>
-                    <p class="text-gray-400">Уникальный стиль, который запомнится.</p>
-                </a>
+                <!-- Service 3: Канал под ключ -->
+                <div data-aos="fade-up" data-aos-delay="200" class="service-card">
+                    <div class="service-card-content p-8">
+                        <div class="text-center">
+                            <div class="service-icon">
+                                <i class="fab fa-telegram text-3xl text-white"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-2xl text-white mb-3 text-center">Канал под ключ</h3>
+                        <p class="text-gray-300 text-center text-sm">Полное ведение Telegram-канала</p>
+                        <div class="service-description">
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                От создания до масштабирования: контент-стратегия, дизайн, регулярные публикации и аналитика. Превращаем канал в мощный инструмент продаж.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-                <!-- Advantage Item -->
-                <a href="https://t.me/moneygrind_agency" target="_blank" data-aos="fade-up" data-aos-delay="150" class="block bg-black/50 backdrop-blur-sm border border-gray-800 p-6 rounded-xl hover:border-white hover:bg-black/70 transition-all duration-300 group">
-                    <h3 class="font-bold text-xl text-white mb-2">Укрепление экспертного статуса</h3>
-                    <p class="text-gray-400">Глубокие материалы для демонстрации экспертности.</p>
-                </a>
+                <!-- Service 4: Разработка -->
+                <div data-aos="fade-up" data-aos-delay="300" class="service-card">
+                    <div class="service-card-content p-8">
+                        <div class="text-center">
+                            <div class="service-icon">
+                                <i class="fas fa-code text-3xl text-white"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-2xl text-white mb-3 text-center">Разработка</h3>
+                        <p class="text-gray-300 text-center text-sm">Мини-приложения, софт, сайты</p>
+                        <div class="service-description">
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                Создаем функциональные решения: лендинги, корпоративные сайты, боты, CRM-системы. Современный дизайн и безупречная техническая реализация.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-                <!-- Advantage Item -->
-                <a href="https://t.me/moneygrind_agency" target="_blank" data-aos="fade-up" data-aos-delay="200" class="block bg-black/50 backdrop-blur-sm border border-gray-800 p-6 rounded-xl hover:border-white hover:bg-black/70 transition-all duration-300 group">
-                    <h3 class="font-bold text-xl text-white mb-2">Генерация лидов и продажи</h3>
-                    <p class="text-gray-400">Превращаем читателей в клиентов.</p>
-                </a>
+                <!-- Service 5: Копирайтинг -->
+                <div data-aos="fade-up" data-aos-delay="400" class="service-card">
+                    <div class="service-card-content p-8">
+                        <div class="text-center">
+                            <div class="service-icon">
+                                <i class="fas fa-pen-fancy text-3xl text-white"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-2xl text-white mb-3 text-center">Копирайтинг</h3>
+                        <p class="text-gray-300 text-center text-sm">Тексты, которые продают</p>
+                        <div class="service-description">
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                Экспертный контент для блогов, соцсетей, сайтов. Статьи, посты, сценарии, продающие тексты — создаем контент, который работает на ваши цели.
+                            </p>
+                        </div>
+                    </div>
+                </div>
                 
-                <!-- Advantage Item -->
-                <a href="https://t.me/moneygrind_agency" target="_blank" data-aos="fade-up" data-aos-delay="250" class="block bg-black/50 backdrop-blur-sm border border-gray-800 p-6 rounded-xl hover:border-white hover:bg-black/70 transition-all duration-300 group">
-                    <h3 class="font-bold text-xl text-white mb-2">Экономия вашего времени</h3>
-                    <p class="text-gray-400">Контент под ключ без вашего участия.</p>
-                </a>
+                <!-- Service 6: Продюсирование -->
+                <div data-aos="fade-up" data-aos-delay="500" class="service-card">
+                    <div class="service-card-content p-8">
+                        <div class="text-center">
+                            <div class="service-icon">
+                                <i class="fas fa-film text-3xl text-white"></i>
+                            </div>
+                        </div>
+                        <h3 class="font-bold text-2xl text-white mb-3 text-center">Продюсирование</h3>
+                        <p class="text-gray-300 text-center text-sm">Полное сопровождение проектов</p>
+                        <div class="service-description">
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                Берем на себя весь цикл: от идеи до реализации. Стратегия, команда, контроль качества, масштабирование. Вы фокусируетесь на экспертности — мы на результате.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Final CTA -->
         <section class="mt-24 md:mt-32">
-            <div data-aos="zoom-in-up" class="bg-black/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 md:p-12 text-center max-w-4xl mx-auto">
-                 <h2 class="font-sora text-2xl md:text-3xl font-bold text-white mb-4">Готовы увеличить продажи?</h2>
-                <p class="font-sora text-gray-300 mb-8">Получите бесплатную консультацию и узнайте, как блог может стать вашим главным источником клиентов!</p>
-                <a href="index.html#contacts" class="inline-block bg-white text-black font-bold py-3 px-8 rounded-lg hover:bg-gray-200 transition-transform transform hover:scale-105 duration-300">
-                    Заказать аудит блога
-                </a>
+            <div data-aos="zoom-in-up" class="bg-gradient-to-br from-green-500/20 via-purple-500/20 to-pink-500/20 backdrop-blur-sm border-2 border-transparent bg-clip-padding rounded-2xl p-8 md:p-12 text-center max-w-4xl mx-auto relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-green-400 via-blue-400 to-purple-500 opacity-20 blur-xl"></div>
+                <div class="relative z-10">
+                    <div class="inline-block mb-6">
+                        <i class="fas fa-hands-helping text-5xl md:text-6xl text-white"></i>
+                    </div>
+                    <h2 class="font-sora text-2xl md:text-4xl font-bold text-white mb-4">Заинтересовала услуга?</h2>
+                    <p class="font-sora text-gray-200 mb-8 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+                        Свяжитесь с нами в Telegram, и мы обсудим, как наши решения помогут вашему бизнесу расти и масштабироваться!
+                    </p>
+                    <a href="https://t.me/moneygrind_agency" target="_blank" class="inline-flex items-center gap-3 bg-white text-black font-bold py-4 px-8 md:px-10 rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 duration-300 shadow-lg hover:shadow-xl">
+                        <i class="fab fa-telegram text-2xl"></i>
+                        <span class="text-base md:text-lg">Написать в Telegram</span>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -173,7 +374,7 @@
             <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 text-gray-400">
                 <!-- <a href="tel:+70000000000" class="hover:text-white transition-colors">+7 (000) 000-00-00</a> -->
                 <!-- <span>&bull;</span> -->
-                <a href="https://t.me/moneygrind_agency" target="_blank" class="hover:text-white transition-colors">Telegram-канал</a>
+                <a href="https://t.me/moneygrindagency" target="_blank" class="hover:text-white transition-colors">Telegram-канал</a>
                 <!-- <span>&bull;</span> -->
                 <!-- <a href="mailto:mail@mail.com" class="hover:text-white transition-colors">mail@mail.com</a> -->
             </div>
@@ -190,6 +391,25 @@
             duration: 800,
             once: true,
         });
+        
+        // Mobile service card interaction
+        if (window.innerWidth <= 768) {
+            const serviceCards = document.querySelectorAll('.service-card');
+            
+            serviceCards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    // Close all other cards
+                    serviceCards.forEach(c => {
+                        if (c !== card) {
+                            c.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current card
+                    this.classList.toggle('active');
+                });
+            });
+        }
         
         // Snow effect
         function createSnowflake() {
