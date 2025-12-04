@@ -211,29 +211,45 @@
 
     <!-- Contact Section -->
     <footer id="contacts" class="bg-black/40 backdrop-blur-md py-16 md:py-24 border-t border-gray-800">
-        <div class="container mx-auto px-6 text-center">
-            <h2 data-aos="fade-up" class="font-sora text-3xl md:text-4xl font-bold text-white mb-8">Свяжитесь с нами</h2>
-            <div data-aos="fade-up" data-aos-delay="100" class="max-w-md mx-auto mb-10">
-                <a href="https://t.me/moneygrindagency" target="_blank" class="group block bg-black/50 backdrop-blur-sm border border-gray-700 hover:border-blue-500 p-6 rounded-2xl transition-all duration-300">
-                    <div class="flex items-center justify-center">
-                        <!-- CDN-hosted Telegram icon from Simple Icons via jsDelivr -->
-                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/telegram.svg" alt="Telegram" class="w-10 h-10 text-blue-400 group-hover:text-white transition-colors" style="filter: invert(72%) sepia(20%) saturate(200%) hue-rotate(170deg) brightness(95%);" />
-                        <div class="ml-4 text-left">
-                            <p class="text-lg font-semibold text-white">Написать в Telegram</p>
-                            <p class="text-gray-400">Самый быстрый способ для заказа</p>
+        <div class="container mx-auto px-6">
+            <h2 data-aos="fade-up" class="font-sora text-3xl md:text-4xl font-bold text-white mb-12 text-center">Свяжитесь с нами</h2>
+            
+            <!-- Feedback Form Card -->
+            <div data-aos="zoom-in" class="max-w-2xl mx-auto mb-16">
+                <div class="bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 backdrop-blur-sm border border-gray-700 hover:border-blue-400 rounded-2xl p-8 md:p-12 transition-all duration-300">
+                    <div class="text-center mb-8">
+                        <div class="inline-block mb-4">
+                            <svg class="w-16 h-16 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+                            </svg>
                         </div>
+                        <h3 class="font-sora text-2xl md:text-3xl font-bold text-white mb-3">Форма обратной связи</h3>
+                        <p class="text-gray-300 mb-8">Напишите нам в Telegram боте — ответим быстро и помогаем найти лучшее решение</p>
                     </div>
+                    
+                    <a href="https://t.me/moneygrind_supbot" target="_blank" class="group flex items-center justify-center gap-4 w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-4 px-8 rounded-lg transition-all transform hover:scale-105 duration-300 shadow-lg hover:shadow-blue-500/50">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/telegram.svg" alt="Telegram" class="w-8 h-8" style="filter: brightness(0) invert(1);" />
+                        <span class="text-lg">Написать в Telegram боте</span>
+                    </a>
+                    
+                    <p class="text-center text-gray-400 text-sm mt-6">
+                        Бот: <span class="text-blue-300 font-semibold">@moneygrind_supbot</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Alternative Contact Options -->
+            <div data-aos="fade-up" data-aos-delay="100" class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 text-gray-400 mb-12">
+                <a href="https://t.me/moneygrindagency" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-2">
+                    <span class="text-blue-400">📢</span> Канал агентства
+                </a>
+                <span class="hidden md:inline text-gray-600">•</span>
+                <a href="https://t.me/moneygrind_supbot" target="_blank" class="hover:text-blue-400 transition-colors flex items-center gap-2">
+                    <span class="text-blue-400">🤖</span> Support Bot
                 </a>
             </div>
 
-            <div data-aos="fade-up" data-aos-delay="200" class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8 text-gray-400">
-                <!-- <a href="tel:+70000000000" class="hover:text-white transition-colors">+7 (000) 000-00-00</a> -->
-                <!-- <span>&bull;</span> -->
-                <a href="https://t.me/moneygrindagency" target="_blank" class="hover:text-white transition-colors">@moneygrindagency</a>
-                <!-- <span>&bull;</span>
-                <a href="mailto:mail@mail.com" class="hover:text-white transition-colors">mail@mail.com</a> -->
-            </div>
-             <div class="mt-12 text-gray-500">
+            <div class="text-center text-gray-500">
                 &copy; 2025 Money Grind. Все права защищены.
             </div>
         </div>
