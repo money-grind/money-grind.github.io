@@ -92,6 +92,46 @@
                 opacity: 0.3;
             }
         }
+
+        /* Premium hover animations */
+        @keyframes glowPulse {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -1000px 0;
+            }
+            100% {
+                background-position: 1000px 0;
+            }
+        }
+
+        @keyframes colorShift {
+            0%, 100% {
+                border-color: rgba(107, 114, 128, 1);
+            }
+            50% {
+                border-color: rgba(59, 130, 246, 0.6);
+            }
+        }
+
+        @keyframes gradientFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -139,8 +179,9 @@
             <p class="font-sora text-gray-400 mb-8 max-w-2xl mx-auto">
                 Мы — команда стратегов, копирайтеров и маркетологов, сфокусированных на результатах для инфобизнеса.
             </p>
-            <a href="about.html" class="inline-block bg-white text-black font-bold py-3 px-8 rounded-lg hover:bg-gray-200 transition-transform transform hover:scale-105 duration-300">
-                Подробнее об агентстве
+            <a href="about.html" class="inline-block bg-white text-black font-bold py-3 px-8 rounded-lg hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 ease-out"
+               style="position: relative; overflow: hidden;">
+                <span class="relative z-10">Подробнее об агентстве</span>
             </a>
         </div>
     </section>
@@ -152,9 +193,9 @@
             <h2 data-aos="fade-right" class="font-sora text-3xl md:text-4xl font-bold text-center mb-12 text-white">Портфолио</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Portfolio Item 1 - Card 1 -->
-                <a href="https://t.me/GrindmoneyPortfolio/22" target="_blank" data-aos="fade-up" class="group bg-black/50 backdrop-blur-sm border border-gray-800 rounded-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:border-gray-600 flex flex-col">
+                <a href="https://t.me/GrindmoneyPortfolio/22" target="_blank" data-aos="fade-up" class="group bg-black/50 backdrop-blur-sm border border-gray-800 rounded-xl overflow-hidden transition-all duration-300 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/30 flex flex-col">
                     <div class="w-full bg-gray-900/50 p-4 flex items-center justify-center min-h-[300px]">
-                        <img src="card1.jpg" alt="Карточка для маркетплейса 1" class="w-full h-auto max-h-[400px] object-contain group-hover:scale-105 transition-transform duration-300">
+                        <img src="card1.jpg" alt="Карточка для маркетплейса 1" class="w-full h-auto max-h-[400px] object-contain group-hover:brightness-110 transition-all duration-300">
                     </div>
                     <div class="p-6">
                         <h3 class="font-semibold text-white text-lg mb-2">Карточка для маркетплейса</h3>
@@ -163,9 +204,9 @@
                 </a>
                 
                 <!-- Portfolio Item 2 - Card 2 -->
-                <a href="https://t.me/GrindmoneyPortfolio/22" target="_blank" data-aos="fade-up" data-aos-delay="100" class="group bg-black/50 backdrop-blur-sm border border-gray-800 rounded-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:border-gray-600 flex flex-col">
+                <a href="https://t.me/GrindmoneyPortfolio/22" target="_blank" data-aos="fade-up" data-aos-delay="100" class="group bg-black/50 backdrop-blur-sm border border-gray-800 rounded-xl overflow-hidden transition-all duration-300 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/30 flex flex-col">
                     <div class="w-full bg-gray-900/50 p-4 flex items-center justify-center min-h-[300px]">
-                        <img src="card2.jpg" alt="Карточка для маркетплейса 2" class="w-full h-auto max-h-[400px] object-contain group-hover:scale-105 transition-transform duration-300">
+                        <img src="card2.jpg" alt="Карточка для маркетплейса 2" class="w-full h-auto max-h-[400px] object-contain group-hover:brightness-110 transition-all duration-300">
                     </div>
                     <div class="p-6">
                         <h3 class="font-semibold text-white text-lg mb-2">Карточка для маркетплейса</h3>
@@ -174,9 +215,9 @@
                 </a>
                 
                 <!-- Portfolio Item 3 - Site 1 -->
-                <a href="https://t.me/GrindmoneyPortfolio/32" target="_blank" data-aos="fade-up" data-aos-delay="200" class="group bg-black/50 backdrop-blur-sm border border-gray-800 rounded-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:border-gray-600 flex flex-col">
+                <a href="https://t.me/GrindmoneyPortfolio/32" target="_blank" data-aos="fade-up" data-aos-delay="200" class="group bg-black/50 backdrop-blur-sm border border-gray-800 rounded-xl overflow-hidden transition-all duration-300 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/30 flex flex-col">
                     <div class="w-full bg-gray-900/50 p-4 flex items-center justify-center min-h-[300px]">
-                        <img src="site1.jpg" alt="Дизайн сайта 1" class="w-full h-auto max-h-[400px] object-contain group-hover:scale-105 transition-transform duration-300">
+                        <img src="site1.jpg" alt="Дизайн сайта 1" class="w-full h-auto max-h-[400px] object-contain group-hover:brightness-110 transition-all duration-300">
                     </div>
                     <div class="p-6">
                         <h3 class="font-semibold text-white text-lg mb-2">Дизайн сайта</h3>
@@ -185,9 +226,9 @@
                 </a>
                 
                 <!-- Portfolio Item 4 - Site 2 -->
-                <a href="https://t.me/GrindmoneyPortfolio/46" target="_blank" data-aos="fade-up" data-aos-delay="300" class="group bg-black/50 backdrop-blur-sm border border-gray-800 rounded-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:border-gray-600 flex flex-col">
+                <a href="https://t.me/GrindmoneyPortfolio/46" target="_blank" data-aos="fade-up" data-aos-delay="300" class="group bg-black/50 backdrop-blur-sm border border-gray-800 rounded-xl overflow-hidden transition-all duration-300 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/30 flex flex-col">
                     <div class="w-full bg-gray-900/50 p-4 flex items-center justify-center min-h-[300px]">
-                        <img src="site2.jpg" alt="Дизайн сайта 2" class="w-full h-auto max-h-[400px] object-contain group-hover:scale-105 transition-transform duration-300">
+                        <img src="site2.jpg" alt="Дизайн сайта 2" class="w-full h-auto max-h-[400px] object-contain group-hover:brightness-110 transition-all duration-300">
                     </div>
                     <div class="p-6">
                         <h3 class="font-semibold text-white text-lg mb-2">Дизайн сайта</h3>
@@ -196,9 +237,9 @@
                 </a>
                 
                 <!-- Portfolio Item 5 - Site 3 -->
-                <a href="https://t.me/GrindmoneyPortfolio/32" target="_blank" data-aos="fade-up" data-aos-delay="400" class="group bg-black/50 backdrop-blur-sm border border-gray-800 rounded-xl overflow-hidden transform hover:-translate-y-2 transition-all duration-300 hover:border-gray-600 flex flex-col">
+                <a href="https://t.me/GrindmoneyPortfolio/32" target="_blank" data-aos="fade-up" data-aos-delay="400" class="group bg-black/50 backdrop-blur-sm border border-gray-800 rounded-xl overflow-hidden transition-all duration-300 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500/30 flex flex-col">
                     <div class="w-full bg-gray-900/50 p-4 flex items-center justify-center min-h-[300px]">
-                        <img src="site3.jpg" alt="Дизайн сайта 3" class="w-full h-auto max-h-[400px] object-contain group-hover:scale-105 transition-transform duration-300">
+                        <img src="site3.jpg" alt="Дизайн сайта 3" class="w-full h-auto max-h-[400px] object-contain group-hover:brightness-110 transition-all duration-300">
                     </div>
                     <div class="p-6">
                         <h3 class="font-semibold text-white text-lg mb-2">Дизайн сайта</h3>
@@ -227,7 +268,7 @@
                         <p class="text-gray-300 mb-8">Напишите нам в Telegram боте — ответим быстро и помогаем найти лучшее решение</p>
                     </div>
                     
-                    <a href="https://t.me/moneygrind_supbot" target="_blank" class="group flex items-center justify-center gap-4 w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold py-4 px-8 rounded-lg transition-all transform hover:scale-105 duration-300 shadow-lg hover:shadow-blue-500/50">
+            <a href="https://t.me/moneygrind_supbot" target="_blank" class="group flex items-center justify-center gap-4 w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:shadow-2xl hover:shadow-blue-500/50 text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 ease-out">
                         <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/telegram.svg" alt="Telegram" class="w-8 h-8" style="filter: brightness(0) invert(1);" />
                         <span class="text-lg">Написать в Telegram боте</span>
                     </a>

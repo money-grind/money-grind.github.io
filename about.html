@@ -62,7 +62,6 @@
             }
         }
         
-        /* Service Cards with Gradient and Glow */
         .service-card {
             position: relative;
             overflow: hidden;
@@ -121,7 +120,6 @@
         
         .service-card:hover .service-card-content {
             background: linear-gradient(135deg, rgba(0, 245, 160, 0.15), rgba(168, 85, 247, 0.15));
-            transform: translateY(-4px);
         }
         
         .service-description {
@@ -155,12 +153,10 @@
             
             .service-card.active .service-card-content {
                 background: linear-gradient(135deg, rgba(0, 245, 160, 0.15), rgba(168, 85, 247, 0.15));
-                transform: translateY(-4px);
             }
             
             .service-card.active .service-icon {
                 background: linear-gradient(135deg, rgba(0, 245, 160, 0.3), rgba(168, 85, 247, 0.3));
-                transform: scale(1.1);
             }
         }
         
@@ -178,7 +174,7 @@
         
         .service-card:hover .service-icon {
             background: linear-gradient(135deg, rgba(0, 245, 160, 0.3), rgba(168, 85, 247, 0.3));
-            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
         }
     </style>
 </head>
@@ -354,7 +350,7 @@
                     <p class="font-sora text-gray-200 mb-8 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
                         Свяжитесь с нами в Telegram, и мы обсудим, как наши решения помогут вашему бизнесу расти и масштабироваться!
                     </p>
-                    <a href="https://t.me/moneygrindagency" target="_blank" class="inline-flex items-center gap-3 bg-white text-black font-bold py-4 px-8 md:px-10 rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 duration-300 shadow-lg hover:shadow-xl">
+                    <a href="https://t.me/moneygrindagency" target="_blank" class="inline-flex items-center gap-3 bg-white text-black font-bold py-4 px-8 md:px-10 rounded-lg hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 ease-out shadow-lg">
                         <i class="fab fa-telegram text-2xl"></i>
                         <span class="text-base md:text-lg">Написать в Telegram</span>
                     </a>
