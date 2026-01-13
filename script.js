@@ -43,8 +43,20 @@ function startSnow() {
     }
 }
 
-// Start snow after page loads
-window.addEventListener('load', startSnow);
+// Check if it's winter (Dec 1 - Feb 28/29)
+function isWinter() {
+    const now = new Date();
+    const month = now.getMonth(); // 0 is January
+    // Winter is December (11), January (0), February (1)
+    return month === 11 || month === 0 || month === 1;
+}
+
+// Start snow after page loads only in winter
+window.addEventListener('load', () => {
+    if (isWinter()) {
+        startSnow();
+    }
+});
 
 // Custom Parallax - opposite direction to scroll
 function initParallax() {
