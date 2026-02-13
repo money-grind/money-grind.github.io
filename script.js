@@ -68,7 +68,7 @@ function initParallax() {
     function updateParallax() {
         const scrolled = window.pageYOffset;
         // Negative value moves background UP when scrolling DOWN (opposite direction)
-        const yPos = -(scrolled * 0.5);
+        const yPos = -(scrolled * 0.8);
         parallaxBg.style.transform = `translateY(${yPos}px)`;
         ticking = false;
     }
